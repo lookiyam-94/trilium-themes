@@ -1,0 +1,240 @@
+/* Omarchy Nothing for Trilium
+ * Note type: Code -> CSS
+ * Owned attributes: #appTheme=omarchy-nothing #appThemeBase=next-dark
+ *   appThemeBase is what pulls in the modern TriliumNext UI.
+ *   Without it the theme falls back to the legacy layout.
+ * Then Menu > Options > Appearance > Theme, and Ctrl+R to reload.
+ * Palette source: lookiyam-94/omarchy-nothing-theme (colors.toml)
+ *
+ * Design rule carried over from the Omarchy theme:
+ *   monochrome ground, glyph-white text, and red spent on ONE thing.
+ *   Here that thing is "where you are": the active note, the active tab,
+ *   the focused input, the cursor. Everything else stays grey.
+ */
+
+:root {
+  /* Ground, deepest to elevated (colors.toml) */
+  --bg: #141414;
+  --bg-dark: #0f0f0f;
+  --bg-darker: #0a0a0a;
+  --bg-light: #1e1e1e;
+
+  /* Text, de-emphasised to cursor */
+  --fg: #d0d0d0;
+  --fg-bright: #f0f0f0;
+  --fg-light: #b4b4b4;
+  --fg-dim: #8a8a8a;
+  --fg-faint: #6e6e6e;
+
+  /* Neutrals: selection never tints */
+  --selection: #333333;
+  --border: #333333;
+  --muted: #8a8a8a;
+
+  /* The one signal */
+  --accent: #d71921;
+  --accent-bright: #ff3b42;
+  --glyph: #f0f0f0;
+
+  /* Named colours, LCh L=70 C=30 */
+  --red: #e06463;
+  --orange: #d89f7f;
+  --yellow: #bcaa75;
+  --green: #8cb687;
+  --cyan: #58bab9;
+  --blue: #7db0e0;
+  --magenta: #c79dcd;
+  --brown: #a57e62;
+  --bright-red: #ff8884;
+  --bright-yellow: #d7c48d;
+  --bright-green: #a5d09f;
+  --bright-cyan: #74d4d3;
+  --bright-blue: #98cafb;
+  --bright-magenta: #e2b7e8;
+}
+
+#trilium-app {
+  --theme-style: dark;
+  --mermaid-theme: dark;
+
+
+  --main-background-color: var(--bg);
+  --main-text-color: var(--fg);
+  --main-border-color: var(--border);
+
+  --accented-background-color: var(--bg-dark);
+  --more-accented-background-color: var(--bg-light);
+
+  --left-pane-background-color: var(--bg-dark);
+  --left-pane-text-color: var(--fg);
+  --launcher-pane-background-color: var(--bg-darker);
+  --launcher-pane-text-color: var(--fg-dim);
+
+  --active-tab-background-color: var(--bg);
+  --active-tab-text-color: var(--fg-bright);
+  --active-tab-hover-background-color: var(--bg-light);
+  --inactive-tab-background-color: var(--bg-dark);
+  --inactive-tab-text-color: var(--fg-dim);
+  --inactive-tab-hover-background-color: var(--bg-light);
+
+  --button-text-color: var(--fg);
+  --button-background-color: var(--bg-light);
+  --button-border-color: var(--border);
+  --button-border-radius: 999px; /* Nothing's pill buttons */
+  --button-disabled-text-color: var(--fg-faint);
+  --button-disabled-background-color: var(--bg-dark);
+
+  /* Primary buttons are glyph-white, not red: red is reserved */
+  --primary-button-background-color: var(--glyph);
+  --primary-button-text-color: var(--bg-darker);
+  --primary-button-border-color: var(--glyph);
+
+  --muted-text-color: var(--fg-dim);
+
+  --input-text-color: var(--fg);
+  --input-background-color: var(--bg-light);
+
+  --hover-item-text-color: var(--fg-bright);
+  --hover-item-background-color: var(--bg-light);
+  --active-item-text-color: var(--fg-bright);
+  --active-item-background-color: var(--selection);
+  --active-item-border-color: var(--accent);
+
+  --menu-text-color: var(--fg);
+  --menu-background-color: var(--bg-light);
+
+  --modal-background-color: var(--bg);
+  --modal-backdrop-color: var(--bg-darker);
+
+  --tooltip-background-color: var(--bg-light);
+  --scrollbar-border-color: var(--border);
+  --link-color: var(--fg-light);
+}
+
+/* Text selection stays neutral grey */
+::selection {
+  background: var(--selection);
+  color: var(--fg-bright);
+}
+
+/* Caret is the red record dot */
+input,
+textarea,
+.ck-content,
+.CodeMirror {
+  caret-color: var(--accent);
+}
+
+/* Links: white with an underline, no colour */
+.ck-content a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--fg-dim);
+  text-underline-offset: 2px;
+}
+
+.ck-content a:hover {
+  text-decoration-color: var(--fg);
+}
+
+/* Tree and scrollbar */
+::-webkit-scrollbar-thumb {
+  background: var(--selection) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted) !important;
+}
+
+span.fancytree-custom-icon {
+  color: var(--fg-dim);
+  background: none;
+}
+
+span.fancytree-node:hover {
+  border: 0 !important;
+  background-color: var(--hover-item-background-color) !important;
+}
+
+/* Active note: grey fill, one red bar. The only red in the tree. */
+span.fancytree-active {
+  background-color: var(--selection) !important;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+span.fancytree-active span.fancytree-custom-icon {
+  color: var(--fg-bright);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 1px var(--accent);
+  border-color: var(--accent);
+}
+
+/* Code notes */
+.ck-content pre {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+}
+
+.ck-content code {
+  background: var(--bg-light);
+  color: var(--fg-light);
+}
+
+.CodeMirror-linenumber {
+  color: var(--fg-faint);
+}
+
+.CodeMirror-cursor {
+  border-left-color: var(--accent) !important;
+}
+
+.note-detail-code-editor div.CodeMirror-selected {
+  background-color: var(--selection);
+}
+
+.CodeMirror-matchingbracket {
+  text-decoration: none;
+  color: var(--fg-bright) !important;
+  border: 1px solid var(--fg-dim);
+}
+
+/* Syntax: reads grey at a glance, hue only up close.
+ * Red appears only for errors, as in the terminal palette. */
+div.CodeMirror span.cm-comment    { color: var(--fg-faint); font-style: italic; }
+div.CodeMirror span.cm-keyword    { color: var(--magenta); }
+div.CodeMirror span.cm-operator   { color: var(--fg-light); }
+div.CodeMirror span.cm-meta       { color: var(--magenta); }
+div.CodeMirror span.cm-string     { color: var(--green); }
+div.CodeMirror span.cm-string-2   { color: var(--cyan); }
+div.CodeMirror span.cm-number     { color: var(--orange); }
+div.CodeMirror span.cm-atom       { color: var(--orange); }
+div.CodeMirror span.cm-def        { color: var(--bright-yellow); }
+div.CodeMirror span.cm-variable   { color: var(--fg); }
+div.CodeMirror span.cm-variable-2 { color: var(--blue); }
+div.CodeMirror span.cm-property   { color: var(--bright-blue); }
+div.CodeMirror span.cm-builtin    { color: var(--cyan); }
+div.CodeMirror span.cm-qualifier  { color: var(--yellow); }
+div.CodeMirror span.cm-tag        { color: var(--bright-magenta); }
+div.CodeMirror span.cm-attribute  { color: var(--yellow); }
+div.CodeMirror span.cm-error      { color: var(--red); }
+
+/* Search highlights: white glyph for matches, red for the current one */
+.ck-find-result {
+  color: var(--bg-darker) !important;
+  background-color: var(--fg-light);
+}
+
+.ck-find-result_selected {
+  color: var(--fg-bright) !important;
+  background-color: var(--accent);
+}
+
+/* Canvas notes */
+.excalidraw.theme--dark {
+  --theme-filter: none !important;
+  --island-bg-color: var(--bg-dark) !important;
+  --button-hover-bg: var(--bg-light) !important;
+  --color-primary: var(--accent) !important;
+}
