@@ -1,4 +1,4 @@
-/* Omarchy Nothing for Trilium
+/* Nothing for Trilium
  * Note type: Code -> CSS
  * Owned attributes: #appTheme=nothing #appThemeBase=next-dark
  *   appThemeBase is what pulls in the modern TriliumNext UI.
@@ -6,7 +6,7 @@
  * Then Menu > Options > Appearance > Theme, and Ctrl+R to reload.
  * Palette source: lookiyam-94/omarchy-nothing-theme (colors.toml)
  *
- * Design rule carried over from the Omarchy theme:
+ * Design rule:
  *   monochrome ground, glyph-white text, and red spent on ONE thing.
  *   Here that thing is "where you are": the active note, the active tab,
  *   the focused input, the cursor. Everything else stays grey.

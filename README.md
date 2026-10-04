@@ -1,6 +1,6 @@
-# Omarchy themes for Trilium
+# Trilium themes
 
-[Omarchy](https://omarchy.org) colour themes ported to [Trilium Notes](https://github.com/TriliumNext/Trilium).
+Colour themes for [Trilium Notes](https://github.com/TriliumNext/Trilium).
 Each theme is built on top of TriliumNext's modern `next-dark` UI. It changes colours only and sets no fonts,
 so the fonts you pick in **Options → Appearance** still apply.
 
@@ -19,7 +19,7 @@ so the fonts you pick in **Options → Appearance** still apply.
 | Nothing | [`themes/nothing.css`](themes/nothing.css) |
 | Tokyo Night | [`themes/tokyo-night.css`](themes/tokyo-night.css) |
 
-The Nothing theme follows [omarchy-nothing-theme](https://github.com/lookiyam-94/omarchy-nothing-theme):
+The Nothing theme is inspired by Nothing's design language:
 monochrome greys, with red used only for "where you are" (the active note, the active tab, the focused input and the cursor).
 
 ## Install
