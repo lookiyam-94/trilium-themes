@@ -1,6 +1,6 @@
 /* Omarchy Catppuccin for Trilium
  * Note type: Code -> CSS
- * Owned attributes: #appTheme=omarchy-catppuccin #appThemeBase=next-dark
+ * Owned attributes: #appTheme=catppuccin #appThemeBase=next-dark
  *   appThemeBase is what pulls in the modern TriliumNext UI.
  *   Without it the theme falls back to the legacy layout.
  * Then Menu > Options > Appearance > Theme, and Ctrl+R to reload.

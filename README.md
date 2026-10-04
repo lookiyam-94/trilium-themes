@@ -28,7 +28,7 @@ monochrome greys, with red used only for "where you are" (the active note, the a
 2. Paste in the contents of the theme file.
 3. Add these labels to the note (use any unique name for the theme):
    ```
-   #appTheme=omarchy-nothing #appThemeBase=next-dark
+   #appTheme=nothing #appThemeBase=next-dark
    ```
    `appThemeBase=next-dark` loads TriliumNext's modern UI under the theme. Without it, the theme sits on top of the legacy layout.
    Every theme needs its own `appTheme` value, otherwise only one of them shows up in the list.

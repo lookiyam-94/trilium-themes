@@ -1,6 +1,6 @@
 /* Omarchy Nord for Trilium
  * Note type: Code -> CSS
- * Owned attributes: #appTheme=omarchy-nord #appThemeBase=next-dark
+ * Owned attributes: #appTheme=nord #appThemeBase=next-dark
  *   appThemeBase is what pulls in the modern TriliumNext UI.
  *   Without it the theme falls back to the legacy layout.
  * Then Menu > Options > Appearance > Theme, and Ctrl+R to reload.
